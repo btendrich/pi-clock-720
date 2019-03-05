@@ -25,17 +25,16 @@ public:
 private slots:
     void updateTimerTimeout();
     void updateNtpStatusTimeout();
-    void readNtpOutput();
     void readPingOutput();
 
 private:
     Ui::MainWindow *ui;
     QTimer *updateTimer;
     QTimer *ntpStatusTimer;
-    QProcess ntpProcess;
     QProcess pingProcess;
     QString textColor;
     QString bgColor;
+    int failureCount;
 };
 
 #endif // MAINWINDOW_H
